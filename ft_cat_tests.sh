@@ -3,7 +3,7 @@
 read -p "enter file name : " file_path
 
 if [[ "$file_path" = "" ]]; then
-    ./s21_cat
+    ./ft_cat
     if [ "$?" = 0 ]; then
       echo "test 0: SUCCESS"
     else
@@ -12,7 +12,7 @@ if [[ "$file_path" = "" ]]; then
 exit $?;
 fi
 
-$ret = ./s21_cat -A $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -A $file_path > result.txt 2> /dev/null
 $ret2 = t -A $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -27,7 +27,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -b $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -b $file_path > result.txt 2> /dev/null
 $ret2 = cat -b $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -43,7 +43,7 @@ else
 fi
 
 
-$ret = ./s21_cat -E $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -E $file_path > result.txt 2> /dev/null
 $ret2 = cat -E $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -58,7 +58,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -e $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -e $file_path > result.txt 2> /dev/null
 $ret2 = cat -e $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -73,7 +73,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -s $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -s $file_path > result.txt 2> /dev/null
 $ret2 = cat -s $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -88,7 +88,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -v $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -v $file_path > result.txt 2> /dev/null
 $ret2 = cat -v $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -103,7 +103,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --number-nonblank $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --number-nonblank $file_path > result.txt 2> /dev/null
 $ret2 = cat --number-nonblank $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -117,7 +117,7 @@ if [ "$ret" = "$ret2" ]; then
 else
   echo "return value false !"
 fi
-$ret = ./s21_cat --show-ends $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --show-ends $file_path > result.txt 2> /dev/null
 ca$ret2 = t --show-ends $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -132,7 +132,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --number $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --number $file_path > result.txt 2> /dev/null
 $ret2 = cat --number $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -147,7 +147,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --squeeze-blank $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --squeeze-blank $file_path > result.txt 2> /dev/null
 $ret2 = cat --squeeze-blank $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -162,7 +162,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --show-tabs $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --show-tabs $file_path > result.txt 2> /dev/null
 $ret2 = cat --show-tabs $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -177,7 +177,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --show-nonprinting $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --show-nonprinting $file_path > result.txt 2> /dev/null
 $ret2 = cat --show-nonprinting $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -192,7 +192,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nb $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nb $file_path > result.txt 2> /dev/null
 $ret2 = cat -nb $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -206,7 +206,7 @@ if [ "$ret" = "$ret2" ]; then
 else
   echo "return value false !"
 fi
-$ret = ./s21_cat -Ab $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Ab $file_path > result.txt 2> /dev/null
 ca$ret2 = t -Ab $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -221,7 +221,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -Ae $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Ae $file_path > result.txt 2> /dev/null
 $ret2 = cat -Ae $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -236,7 +236,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -AE $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -AE $file_path > result.txt 2> /dev/null
 $ret2 = cat -AE $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -251,7 +251,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -An $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -An $file_path > result.txt 2> /dev/null
 $ret2 = cat -An $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -266,7 +266,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -As $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -As $file_path > result.txt 2> /dev/null
 $ret2 = cat -As $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -281,7 +281,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -At $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -At $file_path > result.txt 2> /dev/null
 $ret2 = cat -At $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -295,7 +295,7 @@ if [ "$ret" = "$ret2" ]; then
 else
   echo "return value false !"
 fi
-$ret = ./s21_cat -Av $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Av $file_path > result.txt 2> /dev/null
 ca$ret2 = t -Av $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -310,7 +310,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -be $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -be $file_path > result.txt 2> /dev/null
 $ret2 = cat -be $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -325,7 +325,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -bE $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -bE $file_path > result.txt 2> /dev/null
 $ret2 = cat -bE $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -340,7 +340,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -bs $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -bs $file_path > result.txt 2> /dev/null
 $ret2 = cat -bs $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -355,7 +355,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -bt $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -bt $file_path > result.txt 2> /dev/null
 $ret2 = cat -bt $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -370,7 +370,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -bT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -bT $file_path > result.txt 2> /dev/null
 $ret2 = cat -bT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -385,7 +385,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -bv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -bv $file_path > result.txt 2> /dev/null
 $ret2 = cat -bv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -400,7 +400,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -eE $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -eE $file_path > result.txt 2> /dev/null
 $ret2 = cat -eE $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -415,7 +415,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -en $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -en $file_path > result.txt 2> /dev/null
 $ret2 = cat -en $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -430,7 +430,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -es $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -es $file_path > result.txt 2> /dev/null
 $ret2 = cat -es $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -445,7 +445,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -et $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -et $file_path > result.txt 2> /dev/null
 $ret2 = cat -et $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -460,7 +460,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -eT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -eT $file_path > result.txt 2> /dev/null
 $ret2 = cat -eT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -475,7 +475,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ev $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ev $file_path > result.txt 2> /dev/null
 $ret2 = cat -ev $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -490,7 +490,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -En $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -En $file_path > result.txt 2> /dev/null
 $ret2 = cat -En $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -505,7 +505,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -Es $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Es $file_path > result.txt 2> /dev/null
 $ret2 = cat -Es $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -520,7 +520,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -Et $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Et $file_path > result.txt 2> /dev/null
 $ret2 = cat -Et $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -535,7 +535,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -Ev $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -Ev $file_path > result.txt 2> /dev/null
 $ret2 = cat -Ev $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -550,7 +550,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nv $file_path > result.txt 2> /dev/null
 $ret2 = cat -nv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -565,7 +565,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nt $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nt $file_path > result.txt 2> /dev/null
 $ret2 = cat -nt $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -580,7 +580,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nT $file_path > result.txt 2> /dev/null
 $ret2 = cat -nT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -594,7 +594,7 @@ if [ "$ret" = "$ret2" ]; then
 else
   echo "return value false !"
 fi
-$ret = ./s21_cat -ns $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ns $file_path > result.txt 2> /dev/null
 ca$ret2 = t -ns $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -609,7 +609,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nt $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nt $file_path > result.txt 2> /dev/null
 $ret2 = cat -nt $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -624,7 +624,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -nv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -nv $file_path > result.txt 2> /dev/null
 $ret2 = cat -nv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -639,7 +639,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -tT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -tT $file_path > result.txt 2> /dev/null
 $ret2 = cat -tT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -654,7 +654,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -uv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -uv $file_path > result.txt 2> /dev/null
 $ret2 = cat -uv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -668,7 +668,7 @@ if [ "$ret" = "$ret2" ]; then
 else
   echo "return value false !"
 fi
-$ret = ./s21_cat -AbeEnstTuv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -AbeEnstTuv $file_path > result.txt 2> /dev/null
 ca$ret2 = t -AbeEnstTuv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -683,7 +683,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -snb $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -snb $file_path > result.txt 2> /dev/null
 $ret2 = cat -snb $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -698,7 +698,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ssssAT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ssssAT $file_path > result.txt 2> /dev/null
 $ret2 = cat -ssssAT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -713,7 +713,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ssssAT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ssssAT $file_path > result.txt 2> /dev/null
 $ret2 = cat -ssssAT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -728,7 +728,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --squeeze-blank --number -T $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --squeeze-blank --number -T $file_path > result.txt 2> /dev/null
 $ret2 = cat --squeeze-blank --number -T $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -743,7 +743,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat --squeeze-blank --number --squeeze-blank -A -b -n -AbtT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat --squeeze-blank --number --squeeze-blank -A -b -n -AbtT $file_path > result.txt 2> /dev/null
 $ret2 = cat --squeeze-blank --number --squeeze-blank -A -b -n -AbtT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -758,7 +758,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ssssAT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ssssAT $file_path > result.txt 2> /dev/null
 $ret2 = cat -ssssAT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -773,7 +773,7 @@ else
   echo "return value false !"
 fi
 
-./s21_cat --help > result.txt 2> /dev/null
+./ft_cat --help > result.txt 2> /dev/null
 if [ "$?" = 0 ]; then 2> /dev/null
   echo "test 47: SUCCESS"
 else
@@ -786,7 +786,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -u $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -u $file_path > result.txt 2> /dev/null
 $ret2 = cat -u $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -801,7 +801,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -T $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -T $file_path > result.txt 2> /dev/null
 $ret2 = cat -T $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -816,7 +816,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -v $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -v $file_path > result.txt 2> /dev/null
 $ret2 = cat -v $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -831,7 +831,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -uA $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -uA $file_path > result.txt 2> /dev/null
 $ret2 = cat -uA $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -846,7 +846,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ub $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ub $file_path > result.txt 2> /dev/null
 $ret2 = cat -ub $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -861,7 +861,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ue $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ue $file_path > result.txt 2> /dev/null
 $ret2 = cat -ue $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -876,7 +876,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -uE $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -uE $file_path > result.txt 2> /dev/null
 $ret2 = cat -uE $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -891,7 +891,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -un $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -un $file_path > result.txt 2> /dev/null
 $ret2 = cat -un $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -906,7 +906,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -us $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -us $file_path > result.txt 2> /dev/null
 $ret2 = cat -us $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -921,7 +921,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -ut $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -ut $file_path > result.txt 2> /dev/null
 $ret2 = cat -ut $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -936,7 +936,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -uT $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -uT $file_path > result.txt 2> /dev/null
 $ret2 = cat -uT $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -951,7 +951,7 @@ else
   echo "return value false !"
 fi
 
-$ret = ./s21_cat -uv $file_path > result.txt 2> /dev/null
+$ret = ./ft_cat -uv $file_path > result.txt 2> /dev/null
 $ret2 = cat -uv $file_path > result2.txt 2> /dev/null
 d=$(diff result2.txt result.txt | wc -l)
 if [ "$d" = 0 ]; then
@@ -966,7 +966,7 @@ else
   echo "return value false !"
 fi
 
-./s21_cat --version > result.txt 2> /dev/null
+./ft_cat --version > result.txt 2> /dev/null
 if [ "$?" = 0 ]; then
   echo "test 59: SUCCESS"
 else

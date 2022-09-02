@@ -1,6 +1,6 @@
 #include "../ft_cat.h"
 
-void ft_putstr_fd(char *str, int fd) {
+void s21_putstr(char *str, int fd) {
 if (str == NULL)
   write(fd, "(null)", 6);
 else
@@ -8,8 +8,8 @@ else
 }
 
 void s21_exit(char *str, int n) {
-  ft_putstr_fd(str, 2);
-  ft_putstr_fd("\n", 2);
+  s21_putstr(str, 2);
+  s21_putstr("\n", 2);
   _exit(n);
 }
 
